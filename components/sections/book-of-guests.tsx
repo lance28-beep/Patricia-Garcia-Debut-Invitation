@@ -39,6 +39,8 @@ export function BookOfGuests() {
   const [lastUpdate, setLastUpdate] = useState<Date>(new Date())
   const [previousTotal, setPreviousTotal] = useState(0)
   const [showIncrease, setShowIncrease] = useState(false)
+  const [currentIndex, setCurrentIndex] = useState(0)
+  const [isTransitioning, setIsTransitioning] = useState(false)
 
   // Helper function to get initials from name
   const getInitials = (name: string): string => {
@@ -136,10 +138,58 @@ export function BookOfGuests() {
     }
   }, [totalGuests])
 
+  // Auto-transition effect for displaying 5 cards at a time
+  useEffect(() => {
+    if (confirmedGuests.length <= 5) {
+      setCurrentIndex(0)
+      return
+    }
+
+    const transitionInterval = setInterval(() => {
+      setIsTransitioning(true)
+      
+      // Wait for fade out animation (half of 500ms transition)
+      setTimeout(() => {
+        setCurrentIndex((prev) => {
+          const nextIndex = prev + 5
+          // If we've reached the end, wrap around to the beginning
+          return nextIndex >= confirmedGuests.length ? 0 : nextIndex
+        })
+        // Small delay before fade in to ensure smooth transition
+        setTimeout(() => {
+          setIsTransitioning(false)
+        }, 50)
+      }, 250) // Half of transition duration for fade out
+    }, 5000) // Change every 5 seconds
+
+    return () => clearInterval(transitionInterval)
+  }, [confirmedGuests.length])
+
+  // Get the current 5 cards to display
+  const getCurrentCards = () => {
+    if (confirmedGuests.length <= 5) {
+      return confirmedGuests.map((guest) => ({ guest }))
+    }
+    
+    const endIndex = Math.min(currentIndex + 5, confirmedGuests.length)
+    let cards = confirmedGuests.slice(currentIndex, endIndex).map((guest) => ({ guest }))
+    
+    // If we need to wrap around (show cards from beginning to complete the 5)
+    if (cards.length < 5 && currentIndex + 5 > confirmedGuests.length) {
+      const remaining = 5 - cards.length
+      const wrappedCards = confirmedGuests.slice(0, remaining).map((guest) => ({ guest }))
+      cards = [...cards, ...wrappedCards]
+    }
+    
+    return cards
+  }
+
+  const displayedCards = getCurrentCards()
+
   return (
     <div
       id="guests"
-      className="relative z-10 bg-[#490505] py-14 sm:py-18 md:py-20 lg:py-24 overflow-hidden"
+      className="relative z-10 bg-[#013662] py-14 sm:py-18 md:py-20 lg:py-24 overflow-hidden"
     >
       {/* Ornate pattern background */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-30">
@@ -183,7 +233,7 @@ export function BookOfGuests() {
         </svg>
 
         {/* Subtle overlay for depth */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#490505]/80 via-transparent to-[#490505]/80" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#013662]/80 via-transparent to-[#013662]/80" />
       </div>
 
       {/* Section Header - More Compact */}
@@ -200,7 +250,7 @@ export function BookOfGuests() {
         </h2>
 
         <p className={`${inter.className} text-sm sm:text-base md:text-lg text-[#FCE1B6]/85 max-w-2xl mx-auto mt-4 leading-relaxed`}>
-          Meet the cherished souls joining us for Kaith's debut celebration—your presence makes this evening truly special.
+          Meet the cherished souls joining us for Ena's debut celebration—your presence makes this evening truly special.
         </p>
       </div>
 
@@ -215,35 +265,35 @@ export function BookOfGuests() {
               <button
                 onClick={() => fetchGuests(true)}
                 disabled={isRefreshing}
-                className="absolute top-1.5 right-1.5 sm:top-2 sm:right-2 p-1 sm:p-1.5 rounded-full bg-[#327B72]/10 hover:bg-[#751A23]/20 transition-all duration-300 disabled:opacity-50 group z-10"
+                className="absolute top-1.5 right-1.5 sm:top-2 sm:right-2 p-1 sm:p-1.5 rounded-full bg-[#00558F]/10 hover:bg-[#013662]/20 transition-all duration-300 disabled:opacity-50 group z-10"
                 title="Refresh counts"
               >
-                <RefreshCw className={`h-3 w-3 sm:h-3.5 sm:w-3.5 text-[#751A23] transition-transform ${isRefreshing ? 'animate-spin' : 'group-hover:rotate-180'} duration-500`} />
+                <RefreshCw className={`h-3 w-3 sm:h-3.5 sm:w-3.5 text-[#013662] transition-transform ${isRefreshing ? 'animate-spin' : 'group-hover:rotate-180'} duration-500`} />
               </button>
 
               {/* Main Count with inline text */}
               <div className="mb-1.5 sm:mb-2.5">
                 <div className="flex items-center justify-center gap-1.5 sm:gap-2 flex-wrap">
-                  <h3 className={`${inter.className} text-xl sm:text-3xl md:text-4xl font-bold text-[#490505] transition-all duration-500 ${showIncrease ? 'scale-110 text-green-600' : ''}`}>
+                  <h3 className={`${inter.className} text-xl sm:text-3xl md:text-4xl font-bold text-[#013662] transition-all duration-500 ${showIncrease ? 'scale-110 text-green-600' : ''}`}>
                     {totalGuests}
                   </h3>
                   {showIncrease && (
                     <TrendingUp className="h-3.5 w-3.5 sm:h-5 sm:w-5 text-green-600 animate-bounce" />
                   )}
-                  <p className={`${inter.className} text-sm sm:text-lg md:text-xl text-[#490505] font-medium leading-tight`}>
-                    {totalGuests === 1 ? "Guest" : "Guests"} Celebrating With Kaith
+                  <p className={`${inter.className} text-sm sm:text-lg md:text-xl text-[#013662] font-medium leading-tight`}>
+                    {totalGuests === 1 ? "Guest" : "Guests"} Celebrating With Ena
                   </p>
                 </div>
               </div>
 
               {/* RSVP Count */}
-              <p className={`${inter.className} text-xs sm:text-base text-[#490505]/80 mb-2 sm:mb-3`}>
+              <p className={`${inter.className} text-xs sm:text-base text-[#013662]/80 mb-2 sm:mb-3`}>
                 {rsvpCount} {rsvpCount === 1 ? "RSVP entry" : "RSVP entries"}
               </p>
               
               {/* Message */}
-              <p className={`${inter.className} text-[10px] sm:text-xs md:text-sm text-[#490505]/80 leading-tight`}>
-                Thank you for confirming your RSVP! Your presence means the world to Kaith.
+              <p className={`${inter.className} text-[10px] sm:text-xs md:text-sm text-[#013662]/80 leading-tight`}>
+                Thank you for confirming your RSVP! Your presence means the world to Ena.
               </p>
             </div>
           </div>
@@ -252,17 +302,22 @@ export function BookOfGuests() {
         {/* Guest List Display */}
         {confirmedGuests.length > 0 && (
           <div className="max-w-5xl mx-auto px-2 sm:px-4 md:px-6">
-            <div className="space-y-2 sm:space-y-3 md:space-y-4">
-              {confirmedGuests.map((guest) => (
+            <div className="space-y-2 sm:space-y-3 md:space-y-4 relative min-h-[600px]">
+              {displayedCards.map(({ guest }, displayIndex) => (
                 <div
-                  key={guest.id}
-                  className="relative group bg-white rounded-lg sm:rounded-xl md:rounded-2xl p-2.5 sm:p-4 md:p-6 shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-200 hover:border-[#327B72]"
+                  key={`${guest.id}-${currentIndex}-${displayIndex}`}
+                  className={`relative group bg-white rounded-lg sm:rounded-xl md:rounded-2xl p-2.5 sm:p-4 md:p-6 shadow-sm hover:shadow-lg transition-all duration-500 border border-gray-200 hover:border-[#00558F] ${
+                    isTransitioning ? 'opacity-0 translate-y-4' : 'opacity-100 translate-y-0'
+                  }`}
+                  style={{
+                    transitionDelay: `${displayIndex * 50}ms`,
+                  }}
                 >
                   {/* Guest Header */}
                   <div className="flex items-start gap-2 sm:gap-3 md:gap-4 mb-2 sm:mb-2.5 md:mb-3">
                     {/* Avatar - Mobile Optimized */}
                     <div className="relative flex-shrink-0">
-                      <div className="w-9 h-9 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-full bg-[#751A23] flex items-center justify-center shadow-md ring-2 ring-white/50">
+                      <div className="w-9 h-9 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-full bg-[#013662] flex items-center justify-center shadow-md ring-2 ring-white/50">
                         <span className="text-white font-semibold text-xs sm:text-base md:text-lg">
                           {getInitials(guest.name)}
                         </span>
@@ -284,7 +339,7 @@ export function BookOfGuests() {
                           {guest.name}
                         </h3>
                         {guest.role && (
-                          <p className="text-[9px] sm:text-[10px] md:text-xs text-[#751A23] font-medium">
+                          <p className="text-[9px] sm:text-[10px] md:text-xs text-[#013662] font-medium">
                             {guest.role}
                           </p>
                         )}
@@ -301,17 +356,17 @@ export function BookOfGuests() {
                       {/* Info Badges - Mobile Optimized */}
                       <div className="flex flex-wrap items-center gap-1 sm:gap-1.5 md:gap-2 mb-1.5 sm:mb-2 md:mb-3">
                         {/* Guest count badge */}
-                        <div className="flex items-center gap-0.5 sm:gap-1 px-1.5 sm:px-2 md:px-2.5 py-0.5 sm:py-1 bg-gradient-to-r from-[#751A23]/10 to-[#327B72]/10 border border-[#327B72]/30 rounded sm:rounded-md md:rounded-lg">
-                          <Users className="h-2.5 w-2.5 sm:h-3 sm:w-3 md:h-3.5 md:w-3.5 text-[#751A23]" />
-                          <span className="text-[9px] sm:text-[10px] md:text-xs font-semibold text-[#751A23]">
+                        <div className="flex items-center gap-0.5 sm:gap-1 px-1.5 sm:px-2 md:px-2.5 py-0.5 sm:py-1 bg-gradient-to-r from-[#013662]/10 to-[#00558F]/10 border border-[#00558F]/30 rounded sm:rounded-md md:rounded-lg">
+                          <Users className="h-2.5 w-2.5 sm:h-3 sm:w-3 md:h-3.5 md:w-3.5 text-[#013662]" />
+                          <span className="text-[9px] sm:text-[10px] md:text-xs font-semibold text-[#013662]">
                             {guest.allowedGuests} {guest.allowedGuests === 1 ? 'Guest' : 'Guests'}
                           </span>
                         </div>
 
                         {/* Table badge */}
-                        <div className="flex items-center gap-0.5 sm:gap-1 px-1.5 sm:px-2 md:px-2.5 py-0.5 sm:py-1 bg-gradient-to-r from-[#327B72]/15 to-[#751A23]/10 border border-[#751A23]/40 sm:border-2 rounded sm:rounded-md md:rounded-lg">
-                          <MapPin className="h-2.5 w-2.5 sm:h-3 sm:w-3 md:h-3.5 md:w-3.5 text-[#751A23]" />
-                          <span className="text-[9px] sm:text-[10px] md:text-xs font-semibold sm:font-bold text-[#751A23]">
+                        <div className="flex items-center gap-0.5 sm:gap-1 px-1.5 sm:px-2 md:px-2.5 py-0.5 sm:py-1 bg-gradient-to-r from-[#00558F]/15 to-[#013662]/10 border border-[#013662]/40 sm:border-2 rounded sm:rounded-md md:rounded-lg">
+                          <MapPin className="h-2.5 w-2.5 sm:h-3 sm:w-3 md:h-3.5 md:w-3.5 text-[#013662]" />
+                          <span className="text-[9px] sm:text-[10px] md:text-xs font-semibold sm:font-bold text-[#013662]">
                             {guest.tableNumber && String(guest.tableNumber).trim() !== "" ? (
                               <>Table {guest.tableNumber}</>
                             ) : (
@@ -323,28 +378,28 @@ export function BookOfGuests() {
 
                       {/* Message - Mobile Optimized */}
                       {guest.message && guest.message.trim() !== "" && (
-                        <div className="relative mb-1.5 sm:mb-2.5 md:mb-3 p-2 sm:p-3 md:p-5 bg-gradient-to-br from-[#F8F7FC] via-white to-[#F8F7FC] rounded sm:rounded-lg md:rounded-2xl border border-[#327B72]/30 shadow-sm overflow-hidden">
+                        <div className="relative mb-1.5 sm:mb-2.5 md:mb-3 p-2 sm:p-3 md:p-5 bg-gradient-to-br from-[#F8F7FC] via-white to-[#F8F7FC] rounded sm:rounded-lg md:rounded-2xl border border-[#00558F]/30 shadow-sm overflow-hidden">
                           {/* Decorative corner elements - smaller on mobile */}
                           <div className="absolute top-0 left-0 w-8 h-8 sm:w-12 sm:h-12 md:w-16 md:h-16 opacity-[0.08]">
-                            <svg viewBox="0 0 100 100" className="text-[#751A23]" fill="currentColor">
+                            <svg viewBox="0 0 100 100" className="text-[#013662]" fill="currentColor">
                               <path d="M0,0 L100,0 L0,100 Z" />
                             </svg>
                           </div>
                           <div className="absolute bottom-0 right-0 w-8 h-8 sm:w-12 sm:h-12 md:w-16 md:h-16 opacity-[0.08]">
-                            <svg viewBox="0 0 100 100" className="text-[#327B72]" fill="currentColor">
+                            <svg viewBox="0 0 100 100" className="text-[#00558F]" fill="currentColor">
                               <path d="M100,100 L0,100 L100,0 Z" />
                             </svg>
                           </div>
                           
                           {/* Opening quote - smaller on mobile */}
-                          <div className="absolute top-1 left-1 sm:top-1.5 sm:left-1.5 md:top-2 md:left-2 text-[#327B72]/25">
+                          <div className="absolute top-1 left-1 sm:top-1.5 sm:left-1.5 md:top-2 md:left-2 text-[#00558F]/25">
                             <svg className="w-3 h-3 sm:w-4 sm:h-4 md:w-6 md:h-6" fill="currentColor" viewBox="0 0 24 24">
                               <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z" />
                             </svg>
                           </div>
                           
                           {/* Closing quote - smaller on mobile */}
-                          <div className="absolute bottom-1 right-1 sm:bottom-1.5 sm:right-1.5 md:bottom-2 md:right-2 text-[#327B72]/25">
+                          <div className="absolute bottom-1 right-1 sm:bottom-1.5 sm:right-1.5 md:bottom-2 md:right-2 text-[#00558F]/25">
                             <svg className="w-3 h-3 sm:w-4 sm:h-4 md:w-6 md:h-6" fill="currentColor" viewBox="0 0 24 24">
                               <path d="M18 7h-3l-2 4v6h6v-6h-3zm-8 0H7l-2 4v6h6v-6h-3z" />
                             </svg>
@@ -358,7 +413,7 @@ export function BookOfGuests() {
                           </div>
 
                           {/* Elegant border accent - smaller on mobile */}
-                          <div className="absolute left-0 top-1/2 -translate-y-1/2 w-0.5 sm:w-0.5 md:w-1 h-8 sm:h-12 md:h-16 bg-gradient-to-b from-transparent via-[#327B72] to-transparent rounded-r-full" />
+                          <div className="absolute left-0 top-1/2 -translate-y-1/2 w-0.5 sm:w-0.5 md:w-1 h-8 sm:h-12 md:h-16 bg-gradient-to-b from-transparent via-[#00558F] to-transparent rounded-r-full" />
                         </div>
                       )}
 
@@ -366,15 +421,15 @@ export function BookOfGuests() {
                       {guest.companions && guest.companions.length > 0 && (
                         <div className="pt-1.5 sm:pt-2 md:pt-2.5 border-t border-gray-100">
                           <div className="flex items-center gap-1 mb-1 sm:mb-1.5">
-                            <Users className="h-2.5 w-2.5 sm:h-3 sm:w-3 md:h-3.5 md:w-3.5 text-[#751A23]" />
+                            <Users className="h-2.5 w-2.5 sm:h-3 sm:w-3 md:h-3.5 md:w-3.5 text-[#013662]" />
                             <span className="text-[9px] sm:text-[10px] md:text-xs font-semibold text-gray-700">Companions</span>
                           </div>
                           <div className="flex flex-wrap gap-1 sm:gap-1.5">
                             {guest.companions.map((companion, idx) => (
-                              <div key={idx} className="inline-flex items-center gap-1 sm:gap-1.5 px-1.5 sm:px-2 md:px-2.5 py-0.5 sm:py-1 bg-white border border-[#327B72]/30 rounded sm:rounded-md md:rounded-lg hover:border-[#751A23]/50 transition-colors">
+                              <div key={idx} className="inline-flex items-center gap-1 sm:gap-1.5 px-1.5 sm:px-2 md:px-2.5 py-0.5 sm:py-1 bg-white border border-[#00558F]/30 rounded sm:rounded-md md:rounded-lg hover:border-[#013662]/50 transition-colors">
                                 <span className="text-[9px] sm:text-[10px] md:text-xs font-medium text-gray-800 whitespace-nowrap">{companion.name}</span>
                                 {companion.relationship && companion.relationship.trim() !== "" && (
-                                  <span className="text-[8px] sm:text-[9px] md:text-[10px] text-[#751A23] bg-[#751A23]/10 px-1.5 sm:px-2 py-0.5 rounded-full font-medium border border-[#751A23]/20 whitespace-nowrap">
+                                  <span className="text-[8px] sm:text-[9px] md:text-[10px] text-[#013662] bg-[#013662]/10 px-1.5 sm:px-2 py-0.5 rounded-full font-medium border border-[#013662]/20 whitespace-nowrap">
                                     {companion.relationship}
                                   </span>
                                 )}

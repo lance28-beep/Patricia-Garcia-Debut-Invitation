@@ -6,12 +6,12 @@ import { WindSong, Great_Vibes } from "next/font/google"
 import { siteConfig } from "@/content/site"
 
 const desktopImages = [
-  "/desktop-background/debut (9).webp",
+  "/mobile-background/debut (1).webp",
 
 ]
 
 const mobileImages = [
-  "/decoration/debut (9).jpg",
+  "/desktop-background/debut (3).webp",
 
 ]
 
@@ -103,11 +103,11 @@ export function Hero() {
               }}
             />
           ))}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#490505]/95 via-[#490505]/70 to-transparent z-0" />
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#490505]/70 z-0" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(73,5,5,0.18),transparent_55%)] mix-blend-screen" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(252,225,182,0.12),transparent_35%)] opacity-70 animate-[pulse_9s_ease-in-out_infinite]" />
-        <div className="absolute inset-0 bg-[#490505]/40 z-0" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#013662]/95 via-[#013662]/70 to-transparent z-0" />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#013662]/80 z-0" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(1,54,98,0.22),transparent_55%)] mix-blend-screen" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(229,201,183,0.18),transparent_35%)] opacity-70 animate-[pulse_9s_ease-in-out_infinite]" />
+        <div className="absolute inset-0 bg-[#013662]/40 z-0" />
       </div>
 
       <div className="relative z-10 w-full container mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 flex flex-col items-center justify-end min-h-screen pb-12 sm:pb-20 md:pb-28 lg:pb-40 xl:pb-48">
@@ -117,35 +117,35 @@ export function Hero() {
           }`}
         >
           <div className="space-y-2 sm:space-y-3 mb-2 sm:mb-4">
-            <p className="text-xs sm:text-sm md:text-base lg:text-lg uppercase tracking-[0.35em] text-[#FCE1B6]/90 drop-shadow-lg">
-              Join us in the celebration
+            <p className="text-xs sm:text-sm md:text-base lg:text-lg uppercase tracking-[0.35em] text-[#FBF1E7]/90 drop-shadow-lg">
+              Join us in celebrating
             </p>
-            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-[#ffffff]/90 drop-shadow-lg italic">
-              of a decade and eight
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-[#FBF1E7]/90 drop-shadow-lg italic">
+              the debut of
             </p>
             <div className="flex items-center justify-center gap-3 sm:gap-4 py-1">
-              <div className="h-px w-12 sm:w-16 md:w-20 bg-gradient-to-r from-transparent via-[#490505]/60 to-[#FCE1B6]" />
-              <Sparkles size={12} className="sm:w-3 sm:h-3 md:w-4 md:h-4 text-[#FCE1B6]/80 drop-shadow-md" />
-              <div className="h-px w-12 sm:w-16 md:w-20 bg-gradient-to-l from-transparent via-[#490505]/60 to-[#FCE1B6]" />
+              <div className="h-px w-12 sm:w-16 md:w-20 bg-gradient-to-r from-transparent via-[#013662]/60 to-[#FBF1E7]" />
+              <Sparkles size={12} className="sm:w-3 sm:h-3 md:w-4 md:h-4 text-[#FBF1E7]/80 drop-shadow-md" />
+              <div className="h-px w-12 sm:w-16 md:w-20 bg-gradient-to-l from-transparent via-[#013662]/60 to-[#FBF1E7]" />
             </div>
           </div>
 
           <div className="space-y-2 sm:space-y-3 md:space-y-4">
             <h1
-              className={`${greatVibes.className} text-6xl sm:text-7xl md:text-8xl lg:text-9xl xl:text-[8.5rem] text-[#FCE1B6] drop-shadow-[0_14px_38px_rgba(46,4,26,0.72)] leading-tight tracking-[0.06em]`}
+              className={`${greatVibes.className} text-6xl sm:text-7xl md:text-8xl lg:text-9xl xl:text-[8.5rem] text-[#FBF1E7] drop-shadow-[0_14px_38px_rgba(1,54,98,0.72)] leading-tight tracking-[0.06em]`}
               style={{
                 letterSpacing: "0.08em",
               }}
-            >
-              Kaith
+              >
+              Ena Gerangaya
             </h1>
             <p
-              className={`${windSong.className} text-3xl sm:text-4xl md:text-5xl lg:text-[3.75rem] text-[#FCE1B6] drop-shadow-[0_12px_28px_rgba(73,5,5,0.6)]`}
+              className={`${windSong.className} text-3xl sm:text-4xl md:text-5xl lg:text-[3.75rem] text-[#E5C9B7] drop-shadow-[0_12px_28px_rgba(1,54,98,0.6)]`}
               style={{
                 marginTop: "-0.25rem",
               }}
-            >
-              is turning eighteen!
+              >
+              on her 18th birthday
             </p>
             <div className="h-0.5 sm:h-1 w-28 sm:w-32 md:w-40 lg:w-52 mx-auto bg-gradient-to-r from-transparent via-[#FCE1B6] to-transparent shadow-[0_0_20px_rgba(252,225,182,0.65)]" />
           </div>
@@ -163,22 +163,13 @@ export function Hero() {
             </div>
           </div>
 
-          <div className="pt-6 sm:pt-8 md:pt-10 lg:pt-12 flex flex-row flex-wrap gap-3 sm:gap-4 md:gap-5 justify-center items-stretch max-w-3xl mx-auto w-full px-2">
-             <a
-               href="#narrative"
-               className="group relative flex-1 w-full sm:max-w-none sm:min-w-[200px] md:min-w-[240px] rounded-2xl overflow-hidden transition-transform duration-300 hover:-translate-y-1 focus-visible:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FCE1B6]/40"
-             >
-               <span className="absolute inset-0 rounded-2xl bg-[#FCE1B6] transition-colors duration-300" aria-hidden />
-               <span className="relative z-10 inline-flex h-full min-h-[3.5rem] sm:min-h-[3.75rem] w-full items-center justify-center px-7 sm:px-9 md:px-11 text-[9px] sm:text-[10px] md:text-xs tracking-[0.42em] text-[#2E041A] uppercase font-semibold transition-colors duration-300">
-                 Journey to Eighteen
-               </span>
-             </a>
+          <div className="pt-6 sm:pt-8 md:pt-10 lg:pt-12 flex justify-center items-center max-w-3xl mx-auto w-full px-2">
              <a
                href="#guest-list"
-               className="group relative flex-1 w-full sm:max-w-none sm:min-w-[200px] md:min-w-[240px] rounded-2xl overflow-hidden transition-transform duration-300 hover:-translate-y-1 focus-visible:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FCE1B6]/40"
+               className="group relative w-full sm:max-w-none sm:min-w-[200px] md:min-w-[240px] rounded-2xl overflow-hidden transition-transform duration-300 hover:-translate-y-1 focus-visible:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E5C9B7]/40"
              >
-               <span className="absolute inset-0 rounded-2xl bg-[#490505] border border-[#FCE1B6] transition-colors duration-300" aria-hidden />
-               <span className="relative z-10 inline-flex h-full min-h-[3.5rem] sm:min-h-[3.75rem] w-full items-center justify-center px-7 sm:px-9 md:px-11 text-[9px] sm:text-[10px] md:text-xs tracking-[0.42em] text-[#FCE1B6] uppercase font-semibold transition-colors duration-300">
+               <span className="absolute inset-0 rounded-2xl bg-[#E5C9B7] border border-[#E5C9B7] transition-colors duration-300" aria-hidden />
+               <span className="relative z-10 inline-flex h-full min-h-[3.5rem] sm:min-h-[3.75rem] w-full items-center justify-center px-7 sm:px-9 md:px-11 text-[9px] sm:text-[10px] md:text-xs tracking-[0.42em] text-[#01184C] uppercase font-semibold transition-colors duration-300">
                  RSVP & Guestbook
                </span>
              </a>

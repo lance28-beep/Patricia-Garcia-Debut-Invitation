@@ -1,17 +1,17 @@
 export const siteConfig = {
   couple: {
-    bride: "FLORENCE MAE P CLAVERIA",
-    brideNickname: "Florence Mae",
-    groom: "DANIEL B. GARCIA",
-    groomNickname: "Daniel",
+    bride: "ENA GERANGAYA",
+    brideNickname: "Ena Gerangaya",
+    groom: "",
+    groomNickname: "",
   },
   wedding: {
-    date: "FEBRUARY 14, 2026",
-    time: "4:00PM",
-    venue: "De Guzman's Events Place, Ayos Lomboy, Guimba, Nueva Ecija",
-    tagline: "are getting married!",
-    theme: "Purple & Sage Motif",
-    motif: "#6A4F82, #B9AACB, #A8AF8D, #F4F4F4, #5B6B3C",
+    date: "MARCH 21, 2026",
+    time: "6:00 PM - 10:00 PM",
+    venue: "Sugarland Hotel, Sugar bowl",
+    tagline: "18th Birthday Celebration",
+    theme: "Sapphire & Champagne Motif",
+    motif: "#013662, #00558F, #0272C7, #E5C9B7, #FBF1E7",
   },
   details: {
     rsvp: {
@@ -19,23 +19,23 @@ export const siteConfig = {
     },
   },
   ceremony: {
-    location: "De Guzman's Events Place, Ayos Lomboy, Guimba, Nueva Ecija",
-    venue: "De Guzman's Events Place, Ayos Lomboy, Guimba, Nueva Ecija",
-    date: "February 14 2026",
+    location: "Sugarland Hotel, Sugar bowl",
+    venue: "Sugarland Hotel, Sugar bowl",
+    date: "March 21 2026",
     day: "Saturday",
-    time: "4:00PM",
-    entourageTime: "3:30 PM",
-    guestsTime: "3:30 PM",
+    time: "6:00 PM",
+    entourageTime: "5:30 PM",
+    guestsTime: "5:30 PM",
   },
   reception: {
-    location: "De Guzman's Events Place, Ayos Lomboy, Guimba, Nueva Ecija",
-    venue: "De Guzman's Events Place, Ayos Lomboy, Guimba, Nueva Ecija",
-    date: "FEBRUARY 14, 2026",
-    time: "Reception to follow",
+    location: "Sugarland Hotel, Sugar bowl",
+    venue: "Sugarland Hotel, Sugar bowl",
+    date: "MARCH 21, 2026",
+    time: "6:00 PM - 10:00 PM",
   },
   dressCode: {
-    theme: "Purple & Sage Motif",
-    colors: ["#6A4F82", "#B9AACB", "#A8AF8D", "#F4F4F4", "#5B6B3C"],
+    theme: "Sapphire & Champagne Motif",
+    colors: ["#013662", "#00558F", "#0272C7", "#E5C9B7", "#FBF1E7"],
     sponsors: {
       male: "Barong, Black Pants and Leather Shoes",
       female: "Purple/Lavender/Sage Long Gown"

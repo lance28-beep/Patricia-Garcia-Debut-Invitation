@@ -19,7 +19,7 @@ const inter = Inter({
   weight: ["300", "400", "500", "600"],
 })
 
-const ABOUT_TEXT = `Kaith is a lively, expressive person whose passion for dancing is evident in the way she moves and presents herself. She is kind-hearted and constantly demonstrates compassion and understanding for those around her. People are immediately at ease around her, as though they have known her for a very long time. Kaith is inherently a kikay, appreciating the small pleasures of fashion, self-care, and anything that enhances her individuality. She has an adventurous spirit that encourages her to travel, try new things, and live life to the fullest despite her gentle and playful side. Kaith is a truly remarkable person because of her dancing, warmth, kindness, adventure, and kikay charm.`
+const ABOUT_TEXT = `Ena Gerangaya is a lively, expressive person whose passion for dancing is evident in the way she moves and presents herself. She is kind-hearted and constantly demonstrates compassion and understanding for those around her. People are immediately at ease around her, as though they have known her for a very long time. Ena is inherently a kikay, appreciating the small pleasures of fashion, self-care, and anything that enhances her individuality. She has an adventurous spirit that encourages her to travel, try new things, and live life to the fullest despite her gentle and playful side. Ena is a truly remarkable person because of her dancing, warmth, kindness, adventure, and kikay charm.`
 
 export function Narrative() {
   return (
@@ -32,16 +32,16 @@ export function Narrative() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <p className="text-xs sm:text-sm tracking-[0.4em] uppercase text-[#FCE1B6]/80 mb-4">
-            Crimson tales of the celebrant
+          <p className="text-xs sm:text-sm tracking-[0.4em] uppercase text-white mb-4">
+            Sapphire tales of the celebrant
           </p>
           <h2
-            className={`${greatVibes.className} text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-[#FCE1B6]`}
+            className={`${greatVibes.className} text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-white`}
           >
             My Journey to 18
           </h2>
-          <p className={`${inter.className} text-base sm:text-lg md:text-xl text-[#FCE1B6]/80 mt-4 tracking-[0.08em]`}>
-            Every chapter glows richer beneath wine-red skies and gilded lights.
+          <p className={`${inter.className} text-base sm:text-lg md:text-xl text-white mt-4 tracking-[0.08em]`}>
+            Every chapter glows richer beneath sapphire skies and champagne lights.
           </p>
         </motion.div>
 
@@ -54,7 +54,7 @@ export function Narrative() {
         >
           <div className="w-full max-w-3xl">
             <motion.div
-              className="relative overflow-hidden rounded-3xl border border-[#FCE1B6]/25 px-6 sm:px-8 md:px-10 py-8 sm:py-10 md:py-12"
+              className="relative overflow-hidden rounded-3xl border border-[#E5C9B7]/25 px-6 sm:px-8 md:px-10 py-8 sm:py-10 md:py-12"
               initial={{ opacity: 0, y: 18 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -62,13 +62,13 @@ export function Narrative() {
             >
               <div className="space-y-5 sm:space-y-6">
                 <div>
-                  <h3 className={`${playfair.className} text-2xl sm:text-3xl md:text-4xl text-[#FCE1B6] leading-tight`}>
+                  <h3 className={`${playfair.className} text-2xl sm:text-3xl md:text-4xl text-[#FBF1E7] leading-tight`}>
                     About Me
                   </h3>
                 </div>
 
                 <div className="space-y-4 sm:space-y-5">
-                  <p className="text-sm sm:text-base md:text-lg text-[#FCE1B6]/85 leading-relaxed">
+                  <p className="text-sm sm:text-base md:text-lg text-[#E5C9B7]/85 leading-relaxed">
                     {ABOUT_TEXT}
                   </p>
                 </div>

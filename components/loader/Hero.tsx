@@ -7,19 +7,19 @@ interface HeroProps {
 }
 
 const desktopImages: string[] = [
-   "/desktop-background/debut (1).webp",
-  "/desktop-background/debut (2).webp",
-  "/desktop-background/debut (3).webp", 
-  "/desktop-background/debut (4).webp",
-  "/desktop-background/debut (5).webp",
-];
-
-const mobileImages: string[] = [
 '/mobile-background/debut (1).webp',
 '/mobile-background/debut (2).webp',
 '/mobile-background/debut (3).webp',
 '/mobile-background/debut (4).webp',
 '/mobile-background/debut (2).webp',
+];
+
+const mobileImages: string[] = [
+'/desktop-background/debut (1).webp',
+'/desktop-background/debut (2).webp',
+'/desktop-background/debut (3).webp',
+'/desktop-background/debut (4).webp',
+'/desktop-background/debut (2).webp',
 ];
 
 export const Hero: React.FC<HeroProps> = ({ onOpen, visible }) => {
@@ -65,7 +65,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpen, visible }) => {
         <div 
           className="absolute inset-0 pointer-events-none"
           style={{
-            background: 'linear-gradient(to bottom, rgba(73, 5, 5, 0.7), rgba(73, 5, 5, 0.7))'
+            background: 'linear-gradient(to bottom, rgba(1, 54, 98, 0.7), rgba(0, 85, 143, 0.7))'
           }}
         />
       </div>
@@ -79,7 +79,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpen, visible }) => {
             {/* Monogram Image */}
             <div className="relative w-28 h-28 sm:w-36 sm:h-36 md:w-44 md:h-44">
               <Image
-                src="/monogram/logo.png"
+                src="/monogram/monogram.png"
                 alt="Debut Monogram"
                 fill
                 className="object-contain"
@@ -121,15 +121,15 @@ export const Hero: React.FC<HeroProps> = ({ onOpen, visible }) => {
             }}
             className="px-10 py-4 font-serif text-sm tracking-[0.2em] uppercase rounded-sm border transition-all duration-300"
             style={{
-              backgroundColor: '#490505',
+              backgroundColor: '#01184C',
               borderColor: '#FFE1BE',
               color: '#FFE1BE',
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = 'rgba(73, 5, 5, 0.9)';
+              e.currentTarget.style.backgroundColor = 'rgba(1, 24, 76, 0.9)';
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = '#490505';
+              e.currentTarget.style.backgroundColor = '#01184C';
             }}
           >
             <span

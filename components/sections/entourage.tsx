@@ -240,7 +240,7 @@ export function Entourage() {
 
       <h3
 
-                  className={`${playfair.className} text-xs sm:text-sm md:text-base tracking-[0.45em] uppercase text-[#2E041A] font-semibold mb-1.5 sm:mb-2 md:mb-2.5 ${textAlign} ${className}`}
+                  className={`${playfair.className} text-xs sm:text-sm md:text-base tracking-[0.45em] uppercase text-[#013662] font-semibold mb-1.5 sm:mb-2 md:mb-2.5 ${textAlign} ${className}`}
 
       >
 
@@ -286,7 +286,7 @@ export function Entourage() {
 
       >
 
-        <p className={`${playfair.className} text-[13px] sm:text-sm md:text-base font-medium text-[#2E041A] ${textAlign}`}>
+        <p className={`${playfair.className} text-[13px] sm:text-sm md:text-base font-medium text-[#013662] ${textAlign}`}>
 
           {member.Name}
 
@@ -294,7 +294,7 @@ export function Entourage() {
 
         {showRole && member.RoleTitle && (
 
-          <p className={`${inter.className} text-[10px] sm:text-[11px] md:text-xs font-normal text-[#2E041A]/70 mt-0.5 leading-snug ${textAlign}`}>
+          <p className={`${inter.className} text-[10px] sm:text-[11px] md:text-xs font-normal text-[#00558F]/80 mt-0.5 leading-snug ${textAlign}`}>
 
             {member.RoleTitle}
 
@@ -414,7 +414,7 @@ export function Entourage() {
 
       <div className="flex justify-center py-2 sm:py-2.5 mb-3 sm:mb-4 md:mb-5">
 
-        <div className="h-px w-32 sm:w-48 bg-gradient-to-r from-transparent via-[#2E041A]/20 to-transparent" />
+        <div className="h-px w-32 sm:w-48 bg-gradient-to-r from-transparent via-white/40 to-transparent" />
 
       </div>
 
@@ -438,21 +438,21 @@ export function Entourage() {
 
         <h2
 
-          className={`${greatVibes.className} text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-[#FCE1B6] drop-shadow-[0_18px_48px_rgba(46,4,26,0.68)] mt-4`}
+          className={`${greatVibes.className} text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white drop-shadow-[0_18px_48px_rgba(0,49,83,0.68)] mt-4`}
 
         >
 
-          Honored Guests & Special Roles
+          Ena&apos;s Entourage
 
         </h2>
 
         <p
 
-          className={`${inter.className} text-xs sm:text-sm md:text-base text-[#FCE1B6]/85 max-w-2xl mx-auto mt-4 leading-relaxed`}
+          className={`${inter.className} text-xs sm:text-sm md:text-base text-white/90 max-w-2xl mx-auto mt-4 leading-relaxed`}
 
         >
 
-          Every name holds a special place in Kaith's debut celebration—friends, family, and mentors who help make this milestone moment unforgettable.
+          The cherished circle of family, friends, and honored guests who stand beside Ena Gerangaya on this momentous eighteenth celebration—each name woven into the tapestry of her special day.
 
         </p>
 
@@ -462,9 +462,9 @@ export function Entourage() {
 
       <div className="relative z-10 max-w-5xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
 
-        <div className="relative bg-[#FCE1B6] border-2 border-[#2E041A]/20 rounded-xl sm:rounded-2xl shadow-[0_25px_80px_rgba(46,4,26,0.45)] overflow-hidden">
+        <div className="relative bg-white/90 backdrop-blur-md border-2 border-white/30 rounded-xl sm:rounded-2xl shadow-[0_25px_80px_rgba(0,49,83,0.35)] overflow-hidden">
 
-          <div className="absolute inset-[10px] sm:inset-[14px] md:inset-[18px] border-2 border-[#2E041A]/20 rounded-lg sm:rounded-xl pointer-events-none" />
+          <div className="absolute inset-[10px] sm:inset-[14px] md:inset-[18px] border-2 border-white/25 rounded-lg sm:rounded-xl pointer-events-none" />
 
           <div className="relative p-4 sm:p-5 md:p-6 lg:p-8">
 
@@ -474,9 +474,9 @@ export function Entourage() {
 
                 <div className="flex flex-col items-center gap-4">
 
-                  <Loader2 className="h-12 w-12 animate-spin text-[#2E041A]" />
+                  <Loader2 className="h-12 w-12 animate-spin text-[#013662]" />
 
-                  <span className={`${inter.className} text-[#2E041A]/80 text-lg`}>
+                  <span className={`${inter.className} text-[#013662]/80 text-lg`}>
 
                     Loading the entourage…
 
@@ -498,7 +498,7 @@ export function Entourage() {
 
                     onClick={fetchEntourage}
 
-                    className={`${playfair.className} text-[#2E041A] hover:text-[#2E041A]/70 transition-colors underline`}
+                    className={`${playfair.className} text-[#013662] hover:text-[#013662]/70 transition-colors underline`}
 
                   >
 
@@ -514,9 +514,9 @@ export function Entourage() {
 
               <div className="text-center py-24">
 
-                <Users className="h-16 w-16 text-[#2E041A]/30 mx-auto mb-4" />
+                <Users className="h-16 w-16 text-[#013662]/30 mx-auto mb-4" />
 
-                <p className={`${inter.className} text-[#2E041A]/70 text-lg`}>
+                <p className={`${inter.className} text-[#013662]/70 text-lg`}>
 
                   The entourage list will be available soon.
 
@@ -954,7 +954,7 @@ export function Entourage() {
 
                         <div className="flex justify-center py-2 sm:py-2.5 mb-3 sm:mb-4 md:mb-5">
 
-                          <div className="h-px w-32 sm:w-48 bg-gradient-to-r from-transparent via-[#2E041A]/20 to-transparent" />
+                          <div className="h-px w-32 sm:w-48 bg-gradient-to-r from-transparent via-white/40 to-transparent" />
 
                         </div>
 

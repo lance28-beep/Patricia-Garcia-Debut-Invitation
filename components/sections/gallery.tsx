@@ -21,14 +21,15 @@ const inter = Inter({
 })
 
 const galleryItems = [
-  { image: "/mobile-background/debut (1).webp", text: "Wine-red Reverie" },
-  { image: "/mobile-background/debut (2).webp", text: "Golden Light" },
-  { image: "/mobile-background/debut (3).webp", text: "Velvet Steps" },
-  { image: "/mobile-background/debut (4).webp", text: "Gilded Whispers" },
-  { image: "/desktop-background/debut (5).webp", text: "Crimson Glow" },
-  { image: "/desktop-background/debut (4).webp", text: "Evening Poise" },
-  { image: "/desktop-background/debut (1).webp", text: "Radiant Silhouette" },
-  { image: "/desktop-background/debut (3).webp", text: "Crimson Glow" },
+  { image: "/desktop-background/debut (1).webp", text: "Sapphire Reverie" },
+  { image: "/desktop-background/debut (2).webp", text: "Champagne Light" },
+  { image: "/desktop-background/debut (3).webp", text: "Velvet Steps" },
+  { image: "/desktop-background/debut (4).webp", text: "Twilight Whispers" },
+  { image: "/desktop-background/debut (5).webp", text: "Navy Glow" },
+  { image: "/desktop-background/debut (6).webp", text: "Evening Poise" },
+  { image: "/desktop-background/debut (7).webp", text: "Radiant Silhouette" },
+  { image: "/desktop-background/debut (8).webp", text: "Deep Twilight" },
+  { image: "/desktop-background/debut (9).webp", text: "Deep Twilight" },
 ]
 
 const tileLayouts = [
@@ -116,24 +117,27 @@ export function Gallery() {
   return (
     <Section
       id="gallery"
-      className="relative bg-[#490505] py-14 sm:py-20 md:py-24 lg:py-28 overflow-hidden"
+      className="relative py-14 sm:py-20 md:py-24 lg:py-28 overflow-hidden"
+      style={{ backgroundColor: "#0a1929" }}
     >
+      {/* Refined debutant background: deep navy base with soft gradients */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(252,225,182,0.18),transparent_55%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_25%,rgba(46,4,26,0.5),transparent_45%)] mix-blend-screen" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_10%_85%,rgba(46,4,26,0.35),transparent_50%)]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#001a2e] via-[#0a1929] to-[#001F3F]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_0%,rgba(229,201,183,0.08),transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_40%_at_80%_100%,rgba(0,85,143,0.12),transparent_45%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_50%_30%_at_10%_70%,rgba(1,54,98,0.1),transparent_50%)]" />
       </div>
 
       <div className="relative z-10 text-center px-4">
         <div className="mx-auto max-w-3xl">
-          <p className="text-xs sm:text-sm tracking-[0.45em] uppercase text-[#FCE1B6]/75 mb-3">Crimson keepsakes</p>
+          <p className="text-xs sm:text-sm tracking-[0.45em] uppercase text-white mb-3 font-medium">Sapphire keepsakes</p>
           <h2
-            className={`${greatVibes.className} text-4xl sm:text-5xl md:text-6xl text-[#FCE1B6]`}
+            className={`${greatVibes.className} text-4xl sm:text-5xl md:text-6xl text-white drop-shadow-sm`}
           >
-            Gallery of Gilded Evenings
+            Gallery of Elegant Evenings
           </h2>
-          <p className={`${inter.className} text-sm sm:text-base md:text-lg text-[#FCE1B6]/85 mt-4 leading-relaxed`}>
-            Moments draped in wine red, gold, and black—Kaith's debut glow, framed for you to relive.
+          <p className={`${inter.className} text-sm sm:text-base md:text-lg text-white/95 mt-4 leading-relaxed max-w-2xl mx-auto`}>
+            Moments draped in sapphire blue, champagne, and cream—Ena Gerangaya's debut glow, framed for you to relive.
           </p>
         </div>
       </div>
@@ -142,24 +146,25 @@ export function Gallery() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 md:px-8">
           {isLoading ? (
             <div className="flex items-center justify-center h-64 sm:h-80 md:h-96">
-              <div className="w-14 h-14 border-[3px] border-[#2E041A]/30 border-t-[#FCE1B6] rounded-full animate-spin" />
+              <div className="w-14 h-14 border-[3px] border-[#003153]/30 border-t-[#E5C9B7] rounded-full animate-spin" />
             </div>
           ) : (
-            <div className="mx-auto max-w-5xl w-full px-1">
-              <div className="grid w-full min-h-[420px] sm:min-h-[460px] md:min-h-0 md:aspect-square grid-cols-2 sm:grid-cols-3 md:grid-cols-6 md:grid-rows-6 gap-2 sm:gap-3 md:gap-4">
+            <div className="mx-auto max-w-6xl w-full px-3 sm:px-4 md:px-6">
+              {/* Mobile: 2-col equal cards; Tablet: 3-col; Desktop: 4-col uniform masonry */}
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2.5 sm:gap-3 md:gap-2.5 lg:gap-3 w-full">
                 {galleryItems.map((item, index) => (
                   <button
                     key={item.image + index}
                     type="button"
-                    className={`group relative min-h-[190px] sm:min-h-0 overflow-hidden rounded-2xl sm:rounded-3xl border border-[#FCE1B6]/20 bg-[#2E041A]/60 backdrop-blur-sm shadow-[0_18px_35px_rgba(46,4,26,0.45)] transition-all duration-500 hover:shadow-[0_26px_50px_rgba(46,4,26,0.65)] hover:border-[#FCE1B6]/40 ${tileLayouts[index] ?? ""}`}
+                    className="group relative overflow-hidden rounded-lg sm:rounded-xl md:rounded-xl lg:rounded-2xl border border-white/10 bg-[#003153]/30 backdrop-blur-sm shadow-lg hover:shadow-xl hover:shadow-[#001F3F]/40 transition-all duration-300 hover:border-[#E5C9B7]/40 hover:scale-[1.02] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#E5C9B7]/50 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0a1929] min-h-[140px] sm:min-h-[160px] md:min-h-[200px] lg:min-h-[220px] aspect-[3/4]"
                     onClick={() => {
                       setSelectedImage(item)
                       setCurrentIndex(index)
                     }}
-                    aria-label={`Open image ${index + 1}`}
+                    aria-label={`Open image ${index + 1}: ${item.text}`}
                   >
-                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                      <div className="absolute -inset-5 sm:-inset-6 bg-gradient-to-br from-[#FCE1B6]/25 via-transparent to-[#2E041A]/30 blur-2xl sm:blur-3xl" />
+                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-[1] pointer-events-none">
+                      <div className="absolute -inset-3 bg-gradient-to-br from-[#E5C9B7]/15 via-transparent to-[#001F3F]/30 blur-xl" />
                     </div>
 
                     <div className="relative h-full w-full overflow-hidden">
@@ -168,14 +173,15 @@ export function Gallery() {
                         alt={item.text || `Gallery image ${index + 1}`}
                         loading="lazy"
                         decoding="async"
-                        className="h-full w-full object-cover transition-transform duration-[1200ms] group-hover:scale-110"
+                        className="h-full w-full object-cover object-center transition-transform duration-500 ease-out group-hover:scale-105"
+                        sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, 16vw"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-[#2E041A]/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
                     </div>
 
-                    <div className="absolute bottom-2 sm:bottom-3 left-3 sm:left-4 right-3 sm:right-4 flex items-center justify-between text-[#FCE1B6]/95">
-                      <span className={`${playfair.className} text-[9px] sm:text-xs tracking-[0.25em] uppercase`}>{item.text}</span>
-                      <span className="text-[8px] sm:text-[10px] tracking-[0.38em] uppercase text-[#FCE1B6]/70">{index + 1}/{galleryItems.length}</span>
+                    <div className="absolute bottom-0 left-0 right-0 p-2 sm:p-2.5 md:p-3 flex items-center justify-between text-white z-10">
+                      <span className={`${playfair.className} text-[9px] sm:text-[10px] md:text-xs tracking-[0.15em] uppercase truncate max-w-[72%] drop-shadow-md`}>{item.text}</span>
+                      <span className="text-[8px] sm:text-[9px] tracking-[0.25em] uppercase text-white/80 flex-shrink-0">{index + 1}/{galleryItems.length}</span>
                     </div>
                   </button>
                 ))}
@@ -187,7 +193,7 @@ export function Gallery() {
 
       {selectedImage && (
         <div
-          className="fixed inset-0 z-[9999] bg-[#1A0310]/95 backdrop-blur-sm flex items-center justify-center p-2 sm:p-4"
+          className="fixed inset-0 z-[9999] bg-[#001F3F]/97 backdrop-blur-md flex items-center justify-center p-2 sm:p-4"
           onClick={() => {
             setSelectedImage(null)
             resetZoom()
@@ -247,8 +253,8 @@ export function Gallery() {
             }}
           >
             <div className="absolute inset-x-0 top-0 z-30 flex items-start justify-between px-3 sm:px-6 pt-3 sm:pt-6">
-              <div className="bg-[#2E041A]/80 backdrop-blur-md rounded-full px-3 sm:px-4 py-1.5 sm:py-2 border border-[#FCE1B6]/30 shadow-[0_12px_24px_rgba(5,1,4,0.45)]">
-                <span className="text-xs sm:text-sm font-medium text-[#FCE1B6] tracking-[0.18em]">
+              <div className="bg-[#003153]/90 backdrop-blur-md rounded-full px-3 sm:px-4 py-1.5 sm:py-2 border border-[#E5C9B7]/30 shadow-[0_12px_24px_rgba(0,31,63,0.5)]">
+                <span className="text-xs sm:text-sm font-medium text-[#FBF1E7] tracking-[0.18em]">
                   {currentIndex + 1} / {galleryItems.length}
                 </span>
               </div>
@@ -262,10 +268,10 @@ export function Gallery() {
                     navigateImage("prev")
                     resetZoom()
                   }}
-                  className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 z-20 bg-[#2E041A]/70 hover:bg-[#2E041A]/90 backdrop-blur-md rounded-full p-3 sm:p-4 transition-all duration-200 border border-[#FCE1B6]/30 hover:border-[#FCE1B6]/60"
+                  className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 z-20 bg-[#003153]/80 hover:bg-[#003153]/95 backdrop-blur-md rounded-full p-3 sm:p-4 transition-all duration-200 border border-[#E5C9B7]/30 hover:border-[#E5C9B7]/60"
                   aria-label="Previous image"
                 >
-                  <ChevronLeft size={24} className="sm:w-7 sm:h-7 text-[#FCE1B6]" />
+                  <ChevronLeft size={24} className="sm:w-7 sm:h-7 text-[#FBF1E7]" />
                 </button>
 
                 <button
@@ -274,10 +280,10 @@ export function Gallery() {
                     navigateImage("next")
                     resetZoom()
                   }}
-                  className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 z-20 bg-[#2E041A]/70 hover:bg-[#2E041A]/90 backdrop-blur-md rounded-full p-3 sm:p-4 transition-all duration-200 border border-[#FCE1B6]/30 hover:border-[#FCE1B6]/60"
+                  className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 z-20 bg-[#003153]/80 hover:bg-[#003153]/95 backdrop-blur-md rounded-full p-3 sm:p-4 transition-all duration-200 border border-[#E5C9B7]/30 hover:border-[#E5C9B7]/60"
                   aria-label="Next image"
                 >
-                  <ChevronRight size={24} className="sm:w-7 sm:h-7 text-[#FCE1B6]" />
+                  <ChevronRight size={24} className="sm:w-7 sm:h-7 text-[#FBF1E7]" />
                 </button>
               </>
             )}
@@ -293,11 +299,11 @@ export function Gallery() {
                     setSelectedImage(null)
                     resetZoom()
                   }}
-                  className="absolute top-3 right-3 z-40 flex h-9 w-9 sm:h-11 sm:w-11 items-center justify-center rounded-full border border-[#FCE1B6]/35 bg-[#2E041A]/80 backdrop-blur-md shadow-[0_14px_28px_rgba(23,2,14,0.6)] transition-all duration-200 hover:scale-105"
+                  className="absolute top-3 right-3 z-40 flex h-9 w-9 sm:h-11 sm:w-11 items-center justify-center rounded-full border border-[#E5C9B7]/40 bg-[#003153]/90 backdrop-blur-md shadow-[0_14px_28px_rgba(0,31,63,0.6)] transition-all duration-200 hover:scale-105"
                   aria-label="Close lightbox"
                 >
-                  <span className="absolute inset-0 rounded-full bg-gradient-to-br from-[#FCE1B6]/35 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300" />
-                  <X size={18} className="sm:w-6 sm:h-6 text-[#FCE1B6] drop-shadow-[0_2px_6px_rgba(0,0,0,0.5)]" />
+                  <span className="absolute inset-0 rounded-full bg-gradient-to-br from-[#E5C9B7]/30 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300" />
+                  <X size={18} className="sm:w-6 sm:h-6 text-[#FBF1E7] drop-shadow-[0_2px_6px_rgba(0,0,0,0.5)]" />
                 </button>
                 <img
                   src={selectedImage.image || "/placeholder.svg"}
@@ -306,7 +312,7 @@ export function Gallery() {
                     transform: `translate3d(${pan.x}px, ${pan.y}px, 0) scale(${zoomScale})`,
                     transition: pinchStartDist ? "none" : "transform 200ms ease-out",
                   }}
-                  className="max-w-full max-h-[75vh] sm:max-h-[85vh] object-contain rounded-2xl shadow-[0_35px_65px_rgba(23,2,14,0.75)]"
+                  className="max-w-full max-h-[75vh] sm:max-h-[85vh] object-contain rounded-2xl shadow-[0_32px_64px_rgba(0,31,63,0.6)] ring-2 ring-[#E5C9B7]/20"
                 />
 
                 {zoomScale > 1 && (
@@ -315,7 +321,7 @@ export function Gallery() {
                       e.stopPropagation()
                       resetZoom()
                     }}
-                    className="absolute bottom-2 right-2 bg-[#2E041A]/70 hover:bg-[#2E041A]/90 backdrop-blur-md text-[#FCE1B6] rounded-full px-3 py-1.5 text-xs font-medium border border-[#FCE1B6]/25 transition-all duration-200"
+                    className="absolute bottom-2 right-2 bg-[#003153]/80 hover:bg-[#003153]/95 backdrop-blur-md text-[#FBF1E7] rounded-full px-3 py-1.5 text-xs font-medium border border-[#E5C9B7]/30 transition-all duration-200"
                   >
                     Reset Zoom
                   </button>
@@ -325,7 +331,7 @@ export function Gallery() {
 
             {galleryItems.length > 1 && (
               <div className="absolute bottom-2 left-1/2 -translate-x-1/2 sm:hidden z-20">
-                <p className="text-xs text-[#FCE1B6]/80 bg-[#2E041A]/70 backdrop-blur-sm rounded-full px-3 py-1.5 border border-[#FCE1B6]/20">
+                <p className="text-xs text-[#E5C9B7]/90 bg-[#003153]/80 backdrop-blur-sm rounded-full px-3 py-1.5 border border-[#E5C9B7]/25">
                   Swipe to navigate
                 </p>
               </div>
@@ -337,12 +343,9 @@ export function Gallery() {
       <div className="relative z-10 mt-12 sm:mt-14 md:mt-16 flex justify-center px-4">
         <a
           href="/gallery"
-          className="group relative inline-flex h-full min-h-[3.5rem] sm:min-h-[3.75rem] items-center justify-center overflow-hidden rounded-full border border-[#490505]/30 bg-[#FFE1BE] px-10 sm:px-12 md:px-14 text-[9px] sm:text-[10px] md:text-xs tracking-[0.48em] uppercase text-[#490505] shadow-[0_26px_58px_rgba(73,5,5,0.3)] transition-all duration-600 ease-out hover:-translate-y-2 hover:shadow-[0_36px_70px_rgba(73,5,5,0.4)]"
+          className="group relative inline-flex h-full min-h-[3.5rem] sm:min-h-[3.75rem] items-center justify-center overflow-hidden rounded-full border-2 border-[#E5C9B7]/50 bg-[#E5C9B7] px-10 sm:px-12 md:px-14 text-[9px] sm:text-[10px] md:text-xs tracking-[0.48em] uppercase text-[#001F3F] font-semibold shadow-[0_20px_48px_rgba(0,31,63,0.35)] transition-all duration-500 ease-out hover:-translate-y-1.5 hover:shadow-[0_28px_56px_rgba(0,49,83,0.45)] hover:border-[#E5C9B7]"
         >
-          <span className="absolute inset-0 bg-gradient-to-r from-[#490505]/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-600" />
-          <span className="absolute inset-[2px] rounded-full bg-[#FFE1BE] backdrop-blur-2xl border border-[#490505]/20" />
-          <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-[1100ms] ease-out bg-gradient-to-r from-transparent via-[#490505]/15 to-transparent" />
-          <span className="absolute inset-0 translate-x-full group-hover:-translate-x-full transition-transform duration-[1100ms] ease-out bg-gradient-to-l from-transparent via-[#490505]/10 to-transparent" />
+          <span className="absolute inset-0 bg-gradient-to-r from-white/15 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
           <span className="relative z-10 inline-flex items-center justify-center">
             View Full Gallery
           </span>

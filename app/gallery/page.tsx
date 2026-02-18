@@ -45,7 +45,7 @@ export default async function GalleryPage() {
   ]
 
   return (
-    <main className="min-h-screen bg-[#490505] relative overflow-hidden">
+    <main className="min-h-screen relative overflow-hidden" style={{ background: "linear-gradient(to bottom, #013662, #00558F)" }}>
       {/* Ornate pattern background */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-30">
         {/* Base pattern - diagonal lines forming diamonds */}
@@ -53,12 +53,10 @@ export default async function GalleryPage() {
           className="absolute inset-0"
           style={{
             backgroundImage: `
-              repeating-linear-gradient(45deg, transparent, transparent 70px, rgba(252,225,182,0.1) 70px, rgba(252,225,182,0.1) 71px),
-              repeating-linear-gradient(-45deg, transparent, transparent 70px, rgba(252,225,182,0.1) 70px, rgba(252,225,182,0.1) 71px),
-              repeating-linear-gradient(135deg, transparent, transparent 35px, rgba(252,225,182,0.08) 35px, rgba(252,225,182,0.08) 36px),
-              repeating-linear-gradient(225deg, transparent, transparent 35px, rgba(252,225,182,0.08) 35px, rgba(252,225,182,0.08) 36px)
+              repeating-linear-gradient(45deg, transparent, transparent 70px, rgba(229,201,183,0.06) 70px, rgba(229,201,183,0.06) 71px),
+              repeating-linear-gradient(-45deg, transparent, transparent 70px, rgba(229,201,183,0.06) 70px, rgba(229,201,183,0.06) 71px)
             `,
-            backgroundSize: '70px 70px, 70px 70px, 35px 35px, 35px 35px',
+            backgroundSize: '70px 70px, 70px 70px',
           }}
         />
         
@@ -67,7 +65,7 @@ export default async function GalleryPage() {
           <defs>
             <pattern id="scrollPatternGallery" x="0" y="0" width="140" height="140" patternUnits="userSpaceOnUse">
               {/* Scroll motifs at intersections */}
-              <g fill="none" stroke="#FCE1B6" strokeWidth="0.5">
+              <g fill="none" stroke="#E5C9B7" strokeWidth="0.5">
                 {/* Top scroll */}
                 <path d="M 70 0 Q 65 15 70 30 Q 75 15 70 0" />
                 {/* Bottom scroll */}
@@ -88,35 +86,35 @@ export default async function GalleryPage() {
         </svg>
 
         {/* Subtle overlay for depth */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#490505]/80 via-transparent to-[#490505]/80" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#01123D]/40 via-transparent to-[#15156B]/40" />
       </div>
 
       <section className="relative z-10 max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-8 sm:py-16">
         <div className="text-center mb-6 sm:mb-8 md:mb-10 px-3 sm:px-4">
           <div className="mx-auto max-w-3xl">
-            <p className={`${inter.className} text-xs sm:text-sm tracking-[0.45em] uppercase text-[#FCE1B6]/75 mb-3`}>
-              Crimson keepsakes
+            <p className={`${inter.className} text-xs sm:text-sm tracking-[0.45em] uppercase text-white/75 mb-3`}>
+              Timeless Memories
             </p>
             <h1
-              className={`${greatVibes.className} text-4xl sm:text-5xl md:text-6xl text-[#FCE1B6] mb-4`}
+              className={`${greatVibes.className} text-4xl sm:text-5xl md:text-6xl text-white mb-4 drop-shadow-[0_18px_40px_rgba(1,54,98,0.68)]`}
             >
-              Gallery of Gilded Evenings
+              Nena&apos;s Debut Gallery
             </h1>
-            <p className={`${inter.className} text-sm sm:text-base md:text-lg text-[#FCE1B6]/85 mt-4 leading-relaxed`}>
-              Moments draped in wine red, gold, and black—Kaith's debut glow, framed for you to relive.
+            <p className={`${inter.className} text-sm sm:text-base md:text-lg text-white/90 mt-4 leading-relaxed`}>
+              Moments captured in sapphire blue and champagne elegance—Nena&apos;s eighteenth celebration, preserved for you to treasure forever.
             </p>
           </div>
         </div>
 
         {images.length === 0 ? (
-          <div className={`${inter.className} text-center text-[#FCE1B6]/90`}>
+          <div className={`${inter.className} text-center text-white/90`}>
             <p className="font-light">
               No images found. Add files to{" "}
-              <code className="px-2 py-1 bg-[#2E041A]/80 rounded border border-[#FCE1B6]/30 text-[#FCE1B6]">
+              <code className="px-2 py-1 bg-[#013662]/80 rounded border border-white/30 text-white">
                 public/mobile-background
               </code>
               {" "}or{" "}
-              <code className="px-2 py-1 bg-[#2E041A]/80 rounded border border-[#FCE1B6]/30 text-[#FCE1B6]">
+              <code className="px-2 py-1 bg-[#013662]/80 rounded border border-white/30 text-white">
                 public/desktop-background
               </code>
               .
