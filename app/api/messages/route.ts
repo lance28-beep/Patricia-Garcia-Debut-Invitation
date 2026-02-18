@@ -1,7 +1,7 @@
 import { type NextRequest, NextResponse } from "next/server"
 
 // Google Apps Script URL for Messages sheet
-const MESSAGES_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwU8pvAMT1-dg9Dfdj5FEjzX2zz2tXR_YApzU9WSUsaRZdaM9Q9JTjftKAzNuoaltoa3A/exec'
+const MESSAGES_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwQnVhPxv3QIyooHe2MQ7IzHqJjqLMMsHryNI7fNoecjds1RJtclrMtiaO9pk2ra3SpnQ/exec'
 
 export interface Message {
   timestamp: string
