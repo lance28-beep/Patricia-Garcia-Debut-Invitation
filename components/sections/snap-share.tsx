@@ -443,7 +443,7 @@ export function SnapShare() {
 
               <p className={`${inter.className} text-[#D95C8A]/80 text-[11px] sm:text-xs text-center mb-5`}>
 
-                Help spread the word about Ena's debut celebration. Share the event across your favorite platforms.
+                Help spread the word about `${siteConfig.couple.debutNickname}'s` debut celebration. Share the event across your favorite platforms.
 
               </p>
 

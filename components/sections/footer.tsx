@@ -737,7 +737,7 @@ export function Footer() {
 
             <div className="text-center md:text-left">
 
-              <p className={`text-[white]/85 ${inter.className} text-sm`}>© {year} Ena Gerangaya's Debut. All rights reserved.</p>
+              <p className={`text-[white]/85 ${inter.className} text-sm`}>© {year} ${siteConfig.couple.debutNickname}'s Debut. All rights reserved.</p>
 
               <p className={`text-[white]/90 ${inter.className} text-sm mt-1`}>
 
