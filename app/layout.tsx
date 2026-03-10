@@ -5,22 +5,22 @@ import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 import { siteConfig } from "@/content/site"
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://ena-debut-celebration-invitation.vercel.app/"
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://patricia-garcia-debut-invitation.weddinginvitationrsvp.com"
 const canonicalUrl = siteUrl.replace(/\/$/, "")
-const desktopHero = "/Details/LinkPreviewnew.jpg"
-const mobileHero = "/Details/LinkPreviewnew.jpg"
+const desktopHero = "/Details/linkPreview.jpg"
+const mobileHero = "/Details/linkPreview.jpg"
 const eventImageUrl = `${canonicalUrl}${desktopHero}`
 
-const debutanteName = "Ena"
+const debutanteName = siteConfig.couple.debutNickname
 const eventTitle = `${debutanteName} - Debut Invitation`
-const eventDescription = `Celebrate Ena's debut on ${siteConfig.wedding.date} at ${siteConfig.ceremony.venue}. RSVP, explore the story, and find everything you need to join the celebration.`
+const eventDescription = `Celebrate ${siteConfig.couple.debutNickname}'s debut on ${siteConfig.wedding.date} at ${siteConfig.ceremony.venue}. RSVP, explore the story, and find everything you need to join the celebration.`
 
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Event",
   name: `${debutanteName}'s Debut`,
-  startDate: "2026-02-14T16:00:00+08:00",
-  endDate: "2026-02-14T22:00:00+08:00",
+  startDate: siteConfig.wedding.date,
+  endDate: siteConfig.wedding.date,
   eventStatus: "https://schema.org/EventScheduled",
   eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
   location: [
@@ -49,12 +49,12 @@ const jsonLd = {
   ],
   image: [eventImageUrl],
   description:
-    `You're invited to celebrate Ena's debut. Discover celebration details, RSVP, and explore the story.`,
+    `You're invited to celebrate ${siteConfig.couple.debutNickname}'s debut. Discover celebration details, RSVP, and explore the story.`,
   organizer: {
     "@type": "Person",
     name: debutanteName,
   },
-  eventHashtag: `#EnasDebut`,
+  eventHashtag: `#${siteConfig.couple.debutNickname}Debut`,
 }
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
@@ -70,7 +70,7 @@ export const metadata: Metadata = {
   },
   description: eventDescription,
   keywords:
-    `Ena debut, ${siteConfig.ceremony.venue} debut, ${siteConfig.reception.venue} debut, debut invitation, RSVP, debut gallery, message wall, #EnasDebut`,
+    `${siteConfig.couple.debutNickname} debut, ${siteConfig.ceremony.venue} debut, ${siteConfig.reception.venue} debut, debut invitation, RSVP, debut gallery, message wall, #EnasDebut`,
   applicationName: `${debutanteName} Debut Invitation`,
   authors: [
     { name: debutanteName },
@@ -122,7 +122,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: `${debutanteName} Debut Invitation`,
     description:
-      `You're invited to Ena's debut on ${siteConfig.wedding.date}. RSVP, explore the story, and get all the details for the big day! #EnasDebut`,
+      `You're invited to ${siteConfig.couple.debutNickname}'s debut on ${siteConfig.wedding.date}. RSVP, explore the story, and get all the details for the big day! #EnasDebut`,
     images: [eventImageUrl],
     creator: `@EnasDebut`,
     site: `@EnasDebut`,

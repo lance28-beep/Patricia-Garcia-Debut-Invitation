@@ -73,17 +73,17 @@ export default function MessageWallDisplay({ messages, loading }: MessageWallDis
           <div className="absolute -inset-2 sm:-inset-3 rounded-full border-2 border-white/25 animate-ping"></div>
           <div className="absolute -inset-1.5 sm:-inset-2 rounded-full border border-white/40"></div>
         </div>
-        <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold text-[#D95C8A] mb-2 sm:mb-3 md:mb-4 drop-shadow-lg">
+        <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold text-white mb-2 sm:mb-3 md:mb-4 drop-shadow-lg">
           No Messages Yet
         </h3>
-        <p className="text-xs sm:text-sm md:text-base lg:text-lg text-[#D95C8A]/90 max-w-md mx-auto leading-relaxed mb-4 sm:mb-5 md:mb-6">
+        <p className="text-xs sm:text-sm md:text-base lg:text-lg text-white/90 max-w-md mx-auto leading-relaxed mb-4 sm:mb-5 md:mb-6">
           Be the first to share your heartfelt wishes for {`${siteConfig.couple.debut}`}!
         </p>
           <div className="mt-4 sm:mt-5 md:mt-6 lg:mt-8 flex justify-center">
             <div className="flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-1.5 sm:py-2 bg-white/10 backdrop-blur-sm rounded-full border border-[#D95C8A]/50">
-              <Sparkles className="h-3 w-3 sm:h-4 sm:w-4 text-[#D95C8A] animate-pulse" />
+              <Sparkles className="h-3 w-3 sm:h-4 sm:w-4 text-white animate-pulse" />
               <span className="text-[10px] sm:text-xs md:text-sm font-lora text-white/90">Your message will appear here</span>
-              <Sparkles className="h-3 w-3 sm:h-4 sm:w-4 text-[#D95C8A] animate-pulse" style={{ animationDelay: '0.5s' }} />
+              <Sparkles className="h-3 w-3 sm:h-4 sm:w-4 text-white animate-pulse" style={{ animationDelay: '0.5s' }} />
             </div>
           </div>
       </div>

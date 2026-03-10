@@ -194,7 +194,7 @@ export function Details() {
             className={`${inter.className} text-xs sm:text-sm md:text-base max-w-2xl mx-auto mt-4 leading-relaxed`}
             style={{ color: COLORS.textDeep }}
           >
-            Here&apos;s everything you need to know for Piel Allen&apos;s 18th—schedule, venue, and what to wear for our soft pink seaside celebration.
+            Schedule, venue, dress code, and travel tips for {siteConfig.couple.debutNickname}&apos;s 18th—everything you need for our soft pink beach celebration.
           </p>
         </div>
 
@@ -258,7 +258,7 @@ export function Details() {
                       {entry.label}
                     </p>
                     <div className="flex items-center justify-center gap-2 text-sm sm:text-base font-semibold">
-                      <Clock className="h-3 w-3 sm:h-3.5 sm:w-3.5" style={{ color: COLORS.accent }} />
+                      <Clock className="h-3 w-3 sm:h-3.5 sm:w-3.5" style={{ color: COLORS.accentPink }} />
                       <span>{entry.value}</span>
                     </div>
                   </div>
@@ -394,7 +394,7 @@ export function Details() {
                 className="text-xs sm:text-sm leading-relaxed"
                 style={{ color: COLORS.textDeep }}
               >
-                Semi Formal- shades of pink such as blush, rose, dusty pink or soft pastel pink
+                {siteConfig.dressCode.note}
               </p>
               <div className="relative w-full rounded-xl overflow-hidden border mb-4" style={{ borderColor: `${COLORS.secondaryPink}55` }}>
                 <Image
@@ -465,7 +465,7 @@ export function Details() {
                 className="text-xs sm:text-sm leading-relaxed"
                 style={{ color: COLORS.textDeep }}
               >
-                Complimentary parking is available at the venue. Please arrive a little early to enjoy the photo spots and settle in before the program begins.
+                Complimentary parking is available at {siteConfig.ceremony.venue}. We recommend arriving a little early to enjoy the photo spots and settle in before the program begins.
               </p>
             </div>
           </div>
