@@ -420,7 +420,7 @@ export function GuestList() {
             Join Us in This Elegant Celebration
           </h2>
           <p className={`${inter.className} text-xs sm:text-sm md:text-base text-[#FFF6F8]/85 max-w-2xl mx-auto leading-relaxed`}>
-            Search your name to confirm your presence at Ena's debut. Your RSVP helps us create an evening of grace,
+            Search your name to confirm your presence at {siteConfig.couple.debutNickname}'s debut. Your RSVP helps us create an evening of grace,
             warmth, and cherished memories as we honor this milestone together.
           </p>
         </div>

@@ -8,7 +8,7 @@ export const siteConfig = {
   wedding: {
     date: "APRIL 4, 2026",
     time: "3:00 PM",
-    venue: "7 Cardels Event Centre",
+    venue: "7 Cardels Function Hall Brgy. Gulod Itaas, Batangas City",
     tagline: "18th Birthday Celebration",
     theme: "Soft Pink Beach Aesthetic",
     motif: "#F6C1CF, #F48FB1, #D95C8A, #D8B4E2, #E57399, #FFF6F8",
@@ -19,7 +19,7 @@ export const siteConfig = {
     },
   },
   ceremony: {
-    location: "7 Cardels Event Centre, Gov Antonio Carpio Rd, Batangas City, Batangas",
+    location: "7 Cardels Function Hall Brgy. Gulod Itaas, Batangas City, Batangas",
     venue: "7 Cardels Event Centre",
     date: "April 4, 2026",
     day: "Saturday",
@@ -28,7 +28,7 @@ export const siteConfig = {
     guestsTime: "2:30 PM",
   },
   reception: {
-    location: "7 Cardels Event Centre, Gov Antonio Carpio Rd, Batangas City, Batangas",
+    location: "7 Cardels Function Hall Brgy. Gulod Itaas, Batangas City, Batangas",
     venue: "7 Cardels Event Centre",
     date: "APRIL 4, 2026",
     time: "3:00 PM - 8:00 PM",

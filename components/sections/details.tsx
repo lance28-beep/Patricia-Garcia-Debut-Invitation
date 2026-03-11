@@ -218,9 +218,9 @@ export function Details() {
                 <h3 className="text-xl sm:text-3xl font-serif font-semibold tracking-wide drop-shadow-lg">
                   {siteConfig.wedding.venue}
                 </h3>
-                <p className="text-[10px] sm:text-[12px] text-white/85 tracking-[0.24em] uppercase mt-1">
+                {/* <p className="text-[10px] sm:text-[12px] text-white/85 tracking-[0.24em] uppercase mt-1">
                   {siteConfig.ceremony.location}
-                </p>
+                </p> */}
               </div>
             </div>
 
@@ -397,15 +397,39 @@ export function Details() {
               >
                 {siteConfig.dressCode.note}
               </p>
-              {/* <div className="relative w-full rounded-xl overflow-hidden border mb-4" style={{ borderColor: `${COLORS.secondaryPink}55` }}>
-                <Image
-                  src="/Details/guestAttire.png"
-                  alt="Guest attire guidelines"
-                  width={400}
-                  height={300}
-                  className="w-full h-auto object-contain"
-                />
-              </div> */}
+              {/* Attire guidelines: ladies & gentlemen */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                <div className="relative w-full rounded-xl overflow-hidden border" style={{ borderColor: `${COLORS.secondaryPink}55` }}>
+                  <Image
+                    src="/Details/ladies.png"
+                    alt="Ladies attire guidelines"
+                    width={400}
+                    height={300}
+                    className="w-full h-auto object-contain"
+                  />
+                  <p
+                    className="text-center text-xs font-semibold py-2"
+                    style={{ color: COLORS.accentPink }}
+                  >
+                    Ladies
+                  </p>
+                </div>
+                <div className="relative w-full rounded-xl overflow-hidden border" style={{ borderColor: `${COLORS.secondaryPink}55` }}>
+                  <Image
+                    src="/Details/gentlemen.png"
+                    alt="Gentlemen attire guidelines"
+                    width={400}
+                    height={300}
+                    className="w-full h-auto object-contain"
+                  />
+                  <p
+                    className="text-center text-xs font-semibold py-2"
+                    style={{ color: COLORS.accentPink }}
+                  >
+                    Gentlemen
+                  </p>
+                </div>
+              </div>
               {/* Color palette display */}
               <div className="flex flex-col items-center gap-2 pt-2">
                 <p
