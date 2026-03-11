@@ -27,6 +27,7 @@ const PROGRAM_PART1 = [
   "Opening prayer",
   "Trivia c/o host",
   "18 Blooms",
+  "Cotillion de Honor",
   "18 Candles (first 2 message via video)",
   "Singing of happy birthday song",
   "Blowing of the candle",
@@ -36,11 +37,10 @@ const PROGRAM_PART1 = [
 ]
 
 const PROGRAM_PART2 = [
-  "Intermission Number – To confirm by the celebrant (Dance Number)",
+  "Cotillion de Honor",
   "Trivia c/o Host",
   "18 Shots with trivia games c/o celebrant for questions",
-  "Video messages",
-  "SDE",
+  "18 bags and 18 shoes",
   "Intermission song number – Host",
   "Message from the parent",
   "Message from the celebrant",
