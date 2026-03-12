@@ -379,7 +379,7 @@ export function Countdown() {
                   className="text-xs sm:text-sm md:text-base lg:text-lg font-medium tracking-[0.4em] uppercase mb-3 sm:mb-4"
                   style={{ color: "rgba(137,31,73,0.9)" }}
                 >
-                <span className="block sm:inline">{siteConfig.wedding.time} • {siteConfig.ceremony.venue}</span>
+                <span className="block sm:inline">{siteConfig.wedding.time} • {siteConfig.ceremony.location}</span>
                 {/* <span className="block sm:inline sm:before:content-['•'] sm:before:mx-2">
                   {siteConfig.ceremony.location.includes(',') 
                     ? siteConfig.ceremony.location.split(',').slice(-2).join(',').trim()

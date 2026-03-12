@@ -26,7 +26,6 @@ const PROGRAM_PART1 = [
   "Entrance of the Debutant",
   "Opening prayer",
   "Trivia c/o host",
-  "18 Blooms",
   "18 Candles ",
   "Special video greetings from Kuya Earl and Ate Pat",
   "Singing of happy birthday song",
@@ -490,7 +489,7 @@ export function Details() {
                 className="text-xs sm:text-sm leading-relaxed"
                 style={{ color: COLORS.textDeep }}
               >
-                Complimentary parking is available at {siteConfig.ceremony.venue}. We recommend arriving a little early to enjoy the photo spots and settle in before the program begins.
+                Complimentary parking is available at {siteConfig.ceremony.location}. We recommend arriving a little early to enjoy the photo spots and settle in before the program begins.
               </p>
             </div>
           </div>

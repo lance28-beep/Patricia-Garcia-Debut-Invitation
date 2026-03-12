@@ -36,8 +36,7 @@ const faqItems: FAQItem[] = [
 
     question: "What is the dress code for Piel Allen's debut?",
 
-    answer: `Our celebration theme is "${siteConfig.dressCode.theme}". Guests are encouraged to wear semi-formal attire in soft pink tones—${siteConfig.dressCode.guests.ladies} Gentlemen may come in ${siteConfig.dressCode.guests.gents}.`,
-
+    answer: `Our celebration theme is "${siteConfig.dressCode.theme}". Guests are encouraged to wear attire in soft pink tones—${siteConfig.dressCode.guests.ladies}. Gentlemen may come in ${siteConfig.dressCode.guests.gents}.`,
   },
 
   {
@@ -46,7 +45,7 @@ const faqItems: FAQItem[] = [
 
     answer:
 
-      `Piel Allen's 18th birthday celebration will be held on ${siteConfig.ceremony.day}, ${siteConfig.ceremony.date} at ${siteConfig.ceremony.time}. The celebration will take place at ${siteConfig.ceremony.venue} in Batangas City.`,
+      `Piel Allen's 18th birthday celebration will be held on ${siteConfig.ceremony.day}, ${siteConfig.ceremony.date} at ${siteConfig.ceremony.time}. The celebration will take place at ${siteConfig.ceremony.location} in Batangas City.`,
 
   },
 
@@ -86,7 +85,7 @@ const faqItems: FAQItem[] = [
 
     answer:
 
-      "Yes. Parking is available at 7 Cardels Event Centre. We recommend arriving a bit early to secure a comfortable parking space before the program begins.",
+      `Yes. Parking is available at ${siteConfig.ceremony.location}. We recommend arriving a bit early to secure a comfortable parking space before the program begins.`,
 
   },
 
