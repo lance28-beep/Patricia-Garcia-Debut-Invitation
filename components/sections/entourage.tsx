@@ -462,7 +462,7 @@ export function Entourage() {
 
         >
 
-          The cherished circle of family, friends, and honored guests who stand beside Ena Gerangaya on this momentous eighteenth celebration—each name woven into the tapestry of her special day.
+          The cherished circle of family, friends, and honored guests who stand beside {siteConfig.couple.debutNickname} on this momentous eighteenth celebration—each name woven into the tapestry of her special day.
 
         </p>
 

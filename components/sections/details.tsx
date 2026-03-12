@@ -30,7 +30,7 @@ const PROGRAM_PART1 = [
   "Special video greetings from Kuya Earl and Ate Pat",
   "Singing of happy birthday song",
   "Blowing of the candle",
-  "18 Bills and 18 gifts",
+  "18 Bills/Gifts & 18 Roses",
   "Gracing of the food",
   "Dinner",
   "DJ or Background Track",

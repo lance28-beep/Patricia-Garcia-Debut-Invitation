@@ -720,24 +720,24 @@ export function GuestList() {
                     {/* Who's Coming With You - Companion Names */}
                     {formData.RSVP === "Yes" && companions.length > 0 && (
                       <div className="space-y-2.5 sm:space-y-3">
-                        <label className="flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm font-semibold text-[#FFF6F8] font-sans">
-                          <Users className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-[#FFF6F8] flex-shrink-0" />
+                        <label className="flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm font-semibold text-[#D95C8A] font-sans">
+                          <Users className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-[#D95C8A] flex-shrink-0" />
                           <span>Who's Coming With You?</span>
                         </label>
-                        <p className="text-[10px] sm:text-xs text-[#FFF6F8] -mt-1 sm:-mt-1.5">
+                        <p className="text-[10px] sm:text-xs text-[#D95C8A] -mt-1 sm:-mt-1.5">
                           Please provide names and relationships for your <span className="font-semibold">{companions.length}</span> additional {companions.length === 1 ? 'guest' : 'guests'}
                         </p>
                         {companions.map((companion, index) => (
                           <div key={index} className="bg-[#F4F4F4]/40 rounded-lg p-2 sm:p-2.5 md:p-3 border border-[#F6C1CF]/40 space-y-2 sm:space-y-2.5">
                             <div className="flex items-center gap-1.5 mb-1 sm:mb-1.5">
                               <User className="h-3 w-3 sm:h-3.5 sm:w-3.5 text-[#D95C8A]" />
-                              <span className="text-[10px] sm:text-xs font-semibold text-[#FFF6F8]">
+                              <span className="text-[10px] sm:text-xs font-semibold text-[#D95C8A]">
                                 Guest {index + 2}
                               </span>
                             </div>
                             <div className="space-y-1.5 sm:space-y-2">
                               <div>
-                                <label className="block text-[10px] sm:text-xs font-medium text-[#FFF6F8] mb-1">
+                                <label className="block text-[10px] sm:text-xs font-medium text-[#D95C8A] mb-1">
                                   Full Name
                                 </label>
                                 <input
@@ -749,11 +749,11 @@ export function GuestList() {
                                     setCompanions(newCompanions)
                                   }}
                                   placeholder={`Name of guest ${index + 2}`}
-                                  className="w-full px-2 sm:px-2.5 py-1.5 sm:py-2 border border-[#F6C1CF]/50 focus:border-[#D95C8A] rounded text-[10px] sm:text-xs font-sans text-[#FFF6F8] placeholder:text-[#FFF6F8]/60 transition-all duration-300 focus:ring-1 focus:ring-[#D95C8A]/20 bg-white"
+                                  className="w-full px-2 sm:px-2.5 py-1.5 sm:py-2 border border-[#F6C1CF]/50 focus:border-[#D95C8A] rounded text-[10px] sm:text-xs font-sans text-[#D95C8A] placeholder:text-[#D95C8A]/60 transition-all duration-300 focus:ring-1 focus:ring-[#D95C8A]/20 bg-white"
                                 />
                               </div>
                               <div>
-                                <label className="block text-[10px] sm:text-xs font-medium text-[#FFF6F8] mb-1">
+                                <label className="block text-[10px] sm:text-xs font-medium text-[#D95C8A] mb-1">
                                   Relationship with {selectedGuest?.Name || 'Primary Guest'}
                                 </label>
                                 <input
@@ -765,7 +765,7 @@ export function GuestList() {
                                     setCompanions(newCompanions)
                                   }}
                                   placeholder="e.g., Spouse, Friend, Child, Parent"
-                                  className="w-full px-2 sm:px-2.5 py-1.5 sm:py-2 border border-[#F6C1CF]/50 focus:border-[#D95C8A] rounded text-[10px] sm:text-xs font-sans text-[#FFF6F8] placeholder:text-[#FFF6F8]/60 transition-all duration-300 focus:ring-1 focus:ring-[#D95C8A]/20 bg-white"
+                                      className="w-full px-2 sm:px-2.5 py-1.5 sm:py-2 border border-[#F6C1CF]/50 focus:border-[#D95C8A] rounded text-[10px] sm:text-xs font-sans text-[#D95C8A] placeholder:text-[#D95C8A]/60 transition-all duration-300 focus:ring-1 focus:ring-[#D95C8A]/20 bg-white"
                                 />
                               </div>
                             </div>
