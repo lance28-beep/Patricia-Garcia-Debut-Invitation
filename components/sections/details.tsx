@@ -44,7 +44,7 @@ const PROGRAM_PART2 = [
 	"18 Shots with Trivia Games (Questions from the Celebrant)",
 	"18 Perfumes",
 	"18 Bags (Backpack or Sling Bag)",
-	"18 Footwear (Slides or Sandal)",
+	"18 Footwear (Slides or Sandals)",
 	"Intermission Song Number – Host",
 	"Message from the Parents",
 	"Message from the Celebrant",
