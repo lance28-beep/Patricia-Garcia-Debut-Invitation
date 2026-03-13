@@ -24,8 +24,8 @@ export const siteConfig = {
     date: "April 4, 2026",
     day: "Saturday",
     time: "3:00 PM",
-    entourageTime: "2:30 PM",
-    guestsTime: "2:30 PM",
+    entourageTime: "2:00 PM",
+    guestsTime: "2:00 PM",
   },
   reception: {
     location: "7 Cardels Function Hall Brgy. Gulod Itaas, Batangas City, Batangas",
